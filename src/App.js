@@ -1,12 +1,10 @@
 import './App.css';
 import Main from './components/Main/Main';
-import Sidebar from './components/Sidebar/Sidebar';
 
 function App() {
   return (
-    <div className='main_block'>
+    <div>
       <Main></Main>
-      <Sidebar></Sidebar>
     </div>
   );
 }

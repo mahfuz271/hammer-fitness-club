@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Activity = (props) => {
-    console.log(props);
     return (
         <div className='blog_loop'>
             <div className="thumb">
@@ -11,7 +10,7 @@ const Activity = (props) => {
                 <h3>{props.title}</h3>
                 <h4>Time Required: <b>{props.second}s</b></h4>
             </div>
-            <button type='button' className='btn-main'>Add to list</button>
+            <button onClick={() => props.handleClick(props.second)} type='button' className='btn-main'>Add to list</button>
         </div>
     );
 };
