@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Activity from '../Activity/Activity';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import squats from '../../img/back-squat.jpg';
 import Deadlifts from '../../img/Deadlifts.jpg';
 import Burpees from '../../img/Burpees.jpg';
@@ -48,6 +51,8 @@ const Main = () => {
         handleBreakClick(breaktime);
     }, []);
 
+    const notify = () => toast("You are done with your activity!");
+
     return (
         <div className='main_block'>
             <div>
@@ -90,7 +95,8 @@ const Main = () => {
                     <h4 className='light'><span>{breaks}</span> seconds</h4>
                 </div>
 
-                <button type='button' className='btn-main'>Activity Completed</button>
+                <button onClick={notify} type='button' className='btn-main'>Activity Completed</button>
+                <ToastContainer />
             </div>
         </div>
     );
