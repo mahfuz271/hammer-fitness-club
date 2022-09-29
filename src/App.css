@@ -1,0 +1,49 @@
+html,
+body {
+  overflow-x: hidden;
+  font-family: sans-serif;
+}
+
+h1{
+  color: blue;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.main_block {
+  max-width: 1280px;
+  margin: auto;
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: 1fr 300px;
+}
+
+.blog {
+  display: grid;
+  padding-left: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+  row-gap: 20px;
+}
+.blog_loop {
+  overflow: hidden;
+  border-radius: 15px;
+  border: 1px solid #e8e8e8;
+}
+.blog .thumb {
+  max-width: 100%;
+  overflow: hidden;
+}
+.blog .thumb img {
+  width: 100%;
+}
+.blog .thumb img:hover {
+  animation: zoom-in 2s ease-in-out;
+}
+.blog_loop .text-area {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.blog_loop .text-area  h4 {
+  font-weight: normal;
+}
