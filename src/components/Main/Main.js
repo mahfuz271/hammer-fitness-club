@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Activity from '../Activity/Activity';
 
 import squats from '../../img/back-squat.jpg';
@@ -18,6 +18,13 @@ const Main = () => {
         setSeconds(total);
     }
 
+    useEffect(() => {
+        let t = parseInt(localStorage.getItem("total_exercise_time"));
+        if(isNaN(t)){
+            t = 0;
+        }
+        handleClick(t);
+    }, []);
 
     const [breaks, setBreaks] = useState(10);
     const handleBreakClick = (second) => {
@@ -26,12 +33,20 @@ const Main = () => {
 
         //add active class
         const btns = document.querySelectorAll(".addbreak button");
-        for(let i=0;i<btns.length;i++){
+        for (let i = 0; i < btns.length; i++) {
             btns[i].classList.remove("active");
         }
         const j = (parseInt(second) / 10) - 1;
         btns[j].classList.add("active");
     }
+
+    useEffect(() => {
+        let breaktime = parseInt(localStorage.getItem("total_break_time"));
+        if(isNaN(breaktime) || breaktime<10){
+            breaktime = 10;
+        }
+        handleBreakClick(breaktime);
+    }, []);
 
     return (
         <div className='main_block'>
