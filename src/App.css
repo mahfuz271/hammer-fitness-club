@@ -92,7 +92,8 @@ h1 {
 }
 
 .userinfo,
-.addbreak {
+.addbreak,
+.exercise {
   border-radius: 10px;
   padding-bottom: 15px;
   padding-top: 15px;
@@ -106,24 +107,41 @@ h1 {
   font-size: medium;
 }
 
+.exercise {
+  padding: 10px;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.exercise .light {
+  color: #9faab7;
+}
+
 .addbreak {
   padding-right: 10px;
   padding-left: 10px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   column-gap: 10px;
   justify-items: center;
+  margin-bottom: 30px;
 }
 
 .addbreak button {
+  cursor: pointer;
   font-size: 20px;
   border-radius: 5px;
   padding: 5px;
   background-color: #fff;
+  border-color: #fff;
 }
 
 .addbreak button.active {
+  border-color: #5d5def;
   background-color: #5d5def;
   color: #fff;
+  pointer-events: none;
 }
 
 .userinfo span {

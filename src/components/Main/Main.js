@@ -8,7 +8,7 @@ import Rotations from '../../img/Rotations.jpg';
 import Rolling from '../../img/Rolling.jpg';
 import Adductions from '../../img/Adductions.jpg';
 
-const Header = () => {
+const Main = () => {
     return (
         <div>
             <h1>HAMMER FITNESS CLUB</h1>
@@ -25,4 +25,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Main;

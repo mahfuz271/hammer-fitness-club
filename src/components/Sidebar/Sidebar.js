@@ -15,12 +15,23 @@ const Sidebar = () => {
             </div>
             <h3>Add a break</h3>
             <div className="addbreak">
-                <button>10s</button>
+                <button className='active'>10s</button>
                 <button>20s</button>
                 <button>30s</button>
                 <button>40s</button>
                 <button>50s</button>
             </div>
+            <h3>Exercise Details</h3>
+            <div className='exercise'>
+                <h4>Exercise time</h4>
+                <h4 className='light'><span></span> seconds</h4>
+            </div>
+            <div className='exercise'>
+                <h4>Break time</h4>
+                <h4 className='light'><span>10</span> seconds</h4>
+            </div>
+
+            <button type='button' className='btn-main'>Activity Completed</button>
         </div>
     );
 };
