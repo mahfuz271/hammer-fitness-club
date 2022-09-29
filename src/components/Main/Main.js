@@ -19,8 +19,14 @@ const Main = () => {
 
     const [breaks, setBreaks] = useState(10);
 
-    const handleBreakClick = (second) => {
+    const handleBreakClick = (second, that) => {
         setBreaks(second);
+        const btns = document.querySelectorAll(".addbreak button");
+        for(let i=0;i<btns.length;i++){
+            btns[i].classList.remove("active");
+        }
+        const j = (parseInt(second) / 10) - 1;
+        btns[j].classList.add("active");
     }
 
     return (
@@ -49,11 +55,11 @@ const Main = () => {
                 </div>
                 <h3>Add a break</h3>
                 <div className="addbreak">
-                    <button className='active'>10s</button>
-                    <button>20s</button>
-                    <button>30s</button>
-                    <button>40s</button>
-                    <button>50s</button>
+                    <button className='active' onClick={() => handleBreakClick(10, this)}>10s</button>
+                    <button onClick={() => handleBreakClick(20, this)}>20s</button>
+                    <button onClick={() => handleBreakClick(30, this)}>30s</button>
+                    <button onClick={() => handleBreakClick(40, this)}>40s</button>
+                    <button onClick={() => handleBreakClick(50, this)}>50s</button>
                 </div>
                 <h3>Exercise Details</h3>
                 <div className='exercise'>
