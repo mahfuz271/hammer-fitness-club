@@ -12,15 +12,19 @@ import user from '../../img/Mahfuz.jpg';
 const Main = () => {
 
     const [seconds, setSeconds] = useState(0);
-
     const handleClick = (second) => {
-        setSeconds(seconds + parseInt(second));
+        const total = seconds + parseInt(second);
+        localStorage.setItem("total_exercise_time", total);
+        setSeconds(total);
     }
 
-    const [breaks, setBreaks] = useState(10);
 
-    const handleBreakClick = (second, that) => {
+    const [breaks, setBreaks] = useState(10);
+    const handleBreakClick = (second) => {
+        localStorage.setItem("total_break_time", second);
         setBreaks(second);
+
+        //add active class
         const btns = document.querySelectorAll(".addbreak button");
         for(let i=0;i<btns.length;i++){
             btns[i].classList.remove("active");
@@ -55,11 +59,11 @@ const Main = () => {
                 </div>
                 <h3>Add a break</h3>
                 <div className="addbreak">
-                    <button className='active' onClick={() => handleBreakClick(10, this)}>10s</button>
-                    <button onClick={() => handleBreakClick(20, this)}>20s</button>
-                    <button onClick={() => handleBreakClick(30, this)}>30s</button>
-                    <button onClick={() => handleBreakClick(40, this)}>40s</button>
-                    <button onClick={() => handleBreakClick(50, this)}>50s</button>
+                    <button className='active' onClick={() => handleBreakClick(10)}>10s</button>
+                    <button onClick={() => handleBreakClick(20)}>20s</button>
+                    <button onClick={() => handleBreakClick(30)}>30s</button>
+                    <button onClick={() => handleBreakClick(40)}>40s</button>
+                    <button onClick={() => handleBreakClick(50)}>50s</button>
                 </div>
                 <h3>Exercise Details</h3>
                 <div className='exercise'>
